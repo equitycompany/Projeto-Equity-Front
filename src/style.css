@@ -1,0 +1,92 @@
+html {
+  font-size: 1rem;
+}
+
+.fonte-titulo-nav {
+  font-family: 'Ubuntu', sans-serif;
+  color:orangered; 
+}
+
+.imagem-carrossel-um {
+  object-fit:cover; object-position: 0 10%;
+  height: 400px;
+}
+
+.imagem-carrossel-dois {
+  object-fit:cover; object-position: 0 20%;
+  height: 400px;
+}
+
+.card-imagem {
+  width: 18rem;
+  object-fit:cover;
+  object-position: 0 60%;
+}
+
+.cor-font-carrossel{
+  color:orangered;
+  font-weight: bold;
+  text-shadow: 2px 2px grey;
+}
+
+.card-imagem-top {
+  height:200px;
+  object-fit:cover;
+  object-position: 0 60%;
+}
+
+.img-logo {
+  width: 100px;
+  margin: 0 0 20px;
+}
+
+.p-font{
+  font-size: 20px;
+}
+
+.thumb-redondo {
+  border-radius:50%; 
+  width:250px; 
+  height:250px; 
+  object-fit:cover; 
+  object-position: 0 60%; 
+}
+
+.icones {
+  font-size: 2rem;
+}
+
+.texto-cor-especial {
+  color:#378aef;
+}
+
+.borda-cor-especial {
+  border-color: orangered ;
+}
+
+.btn-cor-especial {
+  background-color: orangered  ;
+  color: white;
+}
+
+#cor-titulo {
+  color: orangered ;
+}
+
+@include media-breakpoint-up(sm) {
+  html {
+    font-size: 1.2rem;
+  }
+}
+
+@include media-breakpoint-up(md) {
+  html {
+    font-size: 1.4rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  html {
+    font-size: 1.6rem;
+  }
+}
