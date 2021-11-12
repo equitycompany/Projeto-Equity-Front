@@ -2,12 +2,10 @@ html {
   font-size: 1rem;
 }
 
-.navbar {
-  font-weight: bold;
-}
-
-.container {
-  margin: 40px auto;
+.caixa {
+  position: relative;
+  width: 500px;
+  margin: 100px auto;
 }
 
 .fonte-titulo-nav {
@@ -23,10 +21,6 @@ html {
 .imagem-carrossel-dois {
   object-fit:cover; object-position: 0 20%;
   height: 400px;
-}
-
-.card {
-  border-radius: 10px;
 }
 
 .card-imagem {
@@ -45,7 +39,6 @@ html {
   height:200px;
   object-fit:cover;
   object-position: 0 60%;
-  border-radius: 10px 10px 0 0;
 }
 
 .img-logo {
@@ -80,23 +73,10 @@ html {
 .btn-cor-especial {
   background-color: orangered  ;
   color: white;
-  transition: 1s all;
-}
-
-#carrossel-principal {
-  margin-top: 20px;
 }
 
 #cor-titulo {
   color: orangered ;
-}
-
-.btn-primary {
-  margin: 20px 0 0 0;
-}
-
-footer {
-  margin-top: auto;
 }
 
 @include media-breakpoint-up(sm) {
@@ -114,11 +94,5 @@ footer {
 @include media-breakpoint-up(lg) {
   html {
     font-size: 1.6rem;
-  }
-}
-
-@media screen and (min-width: 480px) {
-  .btn-cor-especial:hover {
-    transform: scale(1.2);
   }
 }
