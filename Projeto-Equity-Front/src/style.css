@@ -79,6 +79,27 @@ html {
   color: orangered ;
 }
 
+.btn-primary {
+  margin: 20px 0 0 0;
+}
+
+footer {
+  margin-top: auto;
+}
+
+.olho {
+  cursor: pointer;
+  width: 20px;
+}
+
+.mostrarsenha {
+  cursor: pointer;
+}
+
+.small, small {
+  font-size: 60%;
+}
+
 @include media-breakpoint-up(sm) {
   html {
     font-size: 1.2rem;
