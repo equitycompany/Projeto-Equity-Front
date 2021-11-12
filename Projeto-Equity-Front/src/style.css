@@ -99,7 +99,8 @@ html {
 }
 
 footer {
-  margin-top: auto;
+  position: relative;
+  margin: 100px auto;
 }
 
 .olho {
@@ -118,6 +119,19 @@ footer {
 @media screen and (min-width: 480px) {
   .btn-cor-especial:hover {
     transform: scale(1.2);
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .caixa {
+    position: relative;
+    margin: 100px auto;
+  }
+
+  footer {
+    position: relative;
+    width: 500px;
+    margin: 100px auto;
   }
 }
 
