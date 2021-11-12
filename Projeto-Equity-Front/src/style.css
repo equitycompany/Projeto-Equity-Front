@@ -83,10 +83,6 @@ html {
   transition: 1s all;
 }
 
-.btn-cor-especial:hover {
-  transform: scale(1.2);
-}
-
 #carrossel-principal {
   margin-top: 20px;
 }
@@ -118,5 +114,11 @@ footer {
 @include media-breakpoint-up(lg) {
   html {
     font-size: 1.6rem;
+  }
+}
+
+@media screen and (min-width: 480px) {
+  .btn-cor-especial:hover {
+    transform: scale(1.2);
   }
 }
