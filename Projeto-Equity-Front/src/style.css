@@ -125,14 +125,16 @@ footer {
 @media screen and (max-width: 480px) {
   .caixa {
     position: relative;
+    width: 100%;
     margin: 100px auto;
   }
 
   footer {
-    position: relative;
-    width: 500px;
-    margin: 100px auto;
+  position: relative;
+  width: 100%;
+  margin: 100px auto;
   }
+
 }
 
 @include media-breakpoint-up(sm) {
