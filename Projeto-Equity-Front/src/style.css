@@ -2,6 +2,14 @@ html {
   font-size: 1rem;
 }
 
+.navbar {
+  font-weight: bold;
+}
+
+.container {
+  margin: 40px auto;
+}
+
 .caixa {
   position: relative;
   width: 500px;
@@ -27,6 +35,7 @@ html {
   width: 18rem;
   object-fit:cover;
   object-position: 0 60%;
+  border-radius: 10px 10px 10px 10px;
 }
 
 .cor-font-carrossel{
@@ -39,6 +48,7 @@ html {
   height:200px;
   object-fit:cover;
   object-position: 0 60%;
+  border-radius: 10px 10px 0 0;
 }
 
 .img-logo {
@@ -73,6 +83,11 @@ html {
 .btn-cor-especial {
   background-color: orangered  ;
   color: white;
+  transition: 1s all;
+}
+
+#carrossel-principal {
+  margin-top: 20px;
 }
 
 #cor-titulo {
@@ -98,6 +113,12 @@ footer {
 
 .small, small {
   font-size: 60%;
+}
+
+@media screen and (min-width: 480px) {
+  .btn-cor-especial:hover {
+    transform: scale(1.2);
+  }
 }
 
 @include media-breakpoint-up(sm) {
