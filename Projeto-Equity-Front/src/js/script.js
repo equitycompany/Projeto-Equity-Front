@@ -1,15 +1,22 @@
 onload = function() {
-    const fieldlogin = document.getElementById("exampleInputEmail1")
-    const fieldpassword = document.getElementById("exampleInputPassword1")
-    const fieldsavepsw = document.getElementById("exampleCheck1")
-    
-    if (window.localStorage.getItem("exampleCheck1")) {
-        fieldlogin.value = window.localStorage.getItem("exampleInputEmail1")
-        fieldpassword.value = window.localStorage.getItem("exampleInputPassword1")
-        fieldsavepsw.checked = window.localStorage.getItem("exampleCheck1")
-    }
+    if (window.localStorage.getItem("loginsuccess") == "true") {
+        window.location.href = 'http://127.0.0.1:5500/index.html#'
+        console.log("ONLOAD FEITO LOGIN SUCESSO")
+    } else{
+        const fieldlogin = document.getElementById("exampleInputEmail1")
+        const fieldpassword = document.getElementById("exampleInputPassword1")
+        const fieldsavepsw = document.getElementById("exampleCheck1")
+        
+        if (window.localStorage.getItem("exampleCheck1")) {
+            fieldlogin.value = window.localStorage.getItem("exampleInputEmail1")
+            fieldpassword.value = window.localStorage.getItem("exampleInputPassword1")
+            fieldsavepsw.checked = window.localStorage.getItem("exampleCheck1")
+        }
 
-    console.log("ONLOAD FEITO")
+        console.log("ONLOAD FEITO LOGIN FALHO")
+    }
+    
+    window.localStorage.setItem("loginsuccess",  false)
 }
 
 function doLogin() {   
@@ -26,10 +33,10 @@ function doLogin() {
         window.localStorage.setItem("exampleInputPassword1",  fieldpassword.value)
         window.localStorage.setItem("exampleCheck1",  true)
     } else {
-        //Remove do localStorage
-        window.localStorage.removeItem("exampleInputEmail1")
-        window.localStorage.removeItem("exampleInputPassword1")
-        window.localStorage.removeItem("exampleCheck1")
+        //Deixa vazio na localStorage
+        window.localStorage.setItem("exampleInputEmail1", "")
+        window.localStorage.setItem("exampleInputPassword1", "")
+        window.localStorage.setItem("exampleCheck1", "")
     }
 
     doURLAuthentication(fieldlogin.value, fieldpassword.value)
@@ -54,10 +61,12 @@ function doURLAuthentication(login, senha) {
 
     if (validuser == "true") {
         console.log("Login realizado com sucesso")
+        window.localStorage.setItem("loginsuccess",  true)
         // window.open('http://127.0.0.1:5500/index.html#')
         window.location.href = 'http://127.0.0.1:5500/index.html#'
     } else {
         console.log("Login inválido")
+        window.localStorage.setItem("loginsuccess",  false)
     }
 }
 
