@@ -62,7 +62,6 @@ function doURLAuthentication(login, senha) {
     if (validuser == "true") {
         console.log("Login realizado com sucesso")
         window.localStorage.setItem("loginsuccess",  true)
-        // window.open('http://127.0.0.1:5500/index.html#')
         window.location.href = 'http://127.0.0.1:5500/index.html#'
     } else {
         console.log("Login inválido")
@@ -78,5 +77,24 @@ function showPass() {
     } else {
         document.getElementById('exampleInputPassword1').type = 'password';
         document.querySelector(".mostrarsenha").textContent = "Mostrar senha"
+    }
+}
+
+function sendEmail() {
+    var validuser
+    var urlrequest
+    const nome = document.getElementById("exampleFormControlInput1").value
+    const email = document.getElementById("inlineFormInputGroup").value
+    const mensagem = document.getElementById("exampleFormControlTextarea1").value
+
+    urlrequest = "https://localhost:44397/api/Email/EnviarEmail/"
+    urlrequest += nome + "&" + email + "&" + mensagem
+
+    validuser = doGetRequest(urlrequest)
+
+    if (validuser == "true") {
+        console.log("E-mail enviado")
+    } else {
+        console.log("E-mail não foi enviado")
     }
 }
