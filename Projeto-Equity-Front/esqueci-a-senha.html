@@ -47,54 +47,18 @@
             <div class="col">
               <form>
                 <div class="form-group">
-                  <h1 class="login">Login</h1>
-                  <label for="exampleInputEmail1">E-mail:</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                  <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
+                  <h1 class="redefinicaosenha">Redefinição de senha</h1>
+                  <label for="exampleInputEmail1">Digite sua senha:</label>
+                  <input type="password" class="form-control" id="inputsenha1" placeholder="Password" required>
                 </div>
                 <div class="form-group">
-                  <label for="exampleInputPassword1">Senha:</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
-                  id="olho" class="olho" onclick="showPass()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPass()">Mostrar senha</small>
+                  <label for="exampleInputPassword1">Repita sua senha:</label>
+                  <input type="password" class="form-control" id="inputsenha2" placeholder="Password" required>
                 </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
-                </div>
-                <button type="submit" class="btn btn-primary" onclick="doLogin()">Entrar</button>
-                <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="https://www.google.com.br/">Esqueceu sua senha?</a>
+                <button type="submit" class="btn btn-primary" onclick="changepass()">Redefinir</button>
               </form>
             </div>
           </div>
-      </div>
-
-      <div class="modal fade" id="modal-esquecisenha" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-          <dialog class="modal-content">
-            <header class="modal-header">
-              <h5 class="modal-title" id="modal-contato-titulo">Esqueceu sua senha?</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </header>
-            <article class="modal-body">
-              <form>
-                <label class="sr-only" for="inlineFormInputGroup">e-mail</label>
-                <div class="input-group mb-2">
-                  <div class="input-group-prepend">
-                    <div class="input-group-text">@</div>
-                  </div>
-                  <input type="text" class="form-control" id="emailinput" placeholder="Seu e-mail">
-                </div>
-              </form>
-            </article>
-            <footer class="modal-footer modal-botoes">
-              <button type="button" class="btn btn-cor-especial" onclick="sendEmailSenha()">Enviar</button>
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-            </footer>
-          </dialog>
-        </div>
       </div>
       
     </section>

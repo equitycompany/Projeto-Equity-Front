@@ -116,8 +116,38 @@ footer {
   font-size: 60%;
 }
 
+.login {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.esqueci {
+  font-size: 12px;
+  vertical-align: -50%;
+  color: darkgrey;
+  padding-inline-start: 3%;
+}
+
+.modalsenha {
+  width: 40%;
+}
+
+.redefinicaosenha {
+  text-align: center;
+  padding-bottom: 5%;
+}
+
+.modal-botoes {
+  margin: 0%;
+  justify-content: center;
+}
+
+.esqueci:hover {
+  color:blue;
+}
+
 @media screen and (min-width: 480px) {
-  .btn-cor-especial:hover {
+  .btn-materia:hover {
     transform: scale(1.2);
   }
 }
