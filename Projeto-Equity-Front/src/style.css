@@ -12,7 +12,6 @@ html {
 
 .caixa {
   position: relative;
-  width: 500px;
   margin: 100px auto;
 }
 
@@ -119,6 +118,7 @@ footer {
 .login {
   text-align: center;
   padding-bottom: 5%;
+  color: orangered;
 }
 
 .esqueci {
@@ -144,6 +144,10 @@ footer {
 
 .esqueci:hover {
   color:blue;
+}
+
+.fazer-parte{
+  width: 50%;
 }
 
 @media screen and (min-width: 480px) {

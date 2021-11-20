@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <script src="src/js/script.js"></script>
-  <title>Equity | Acesso a oportunidades de trabalho digno, as pessoas mais vulneráve!</title>
+  <title>Equity | Acesso a oportunidades de trabalho digno, as pessoas mais vulneráveis!</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   <link href="https://fonts.googleapis.com/css2?family=Dongle:wght@300&family=Ubuntu:wght@300&display=swap" rel="stylesheet">
@@ -29,7 +29,10 @@
             <a class="nav-link" href="./index.html#quem-somos">Quem somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="./login-candidato.html">Login</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modal-candidato" href="#">Candidato</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" data-toggle="modal" data-target="#modal-empresa" href="#">Empresa</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#modal-contato" href="#">Contato</a>
@@ -223,6 +226,106 @@
       <footer class="modal-footer">
         <button type="button" class="btn btn-cor-especial" onclick="sendEmail()">Enviar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+      </footer>
+    </dialog>
+  </div>
+</div>
+
+<!-- modal candidato -->
+
+<div class="modal fade" id="modal-candidato" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <dialog class="modal-content">
+      <header class="modal-header">
+        <h5 class="modal-title" id="modal-contato-titulo">Login Candidato</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </header>
+      <article>
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">E-mail:</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Senha:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
+                  id="olho" class="olho" onclick="showPass()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPass()">Mostrar senha</small>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
+                </div>
+                <button type="submit" class="btn btn-cor-especial" onclick="doLogin()">Entrar</button>
+                <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="https://www.google.com.br/">Esqueceu sua senha?</a>
+              </form>
+      </article>
+      <footer class="modal-footer">
+        <div class="row">
+          <div class="col-7">
+            <p class="font-weight-light">Não faz parte? &#128552;</p>
+          </div>
+          <div class="col-5">
+            <a href="./cadastro-candidato.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
+          </div>
+      </footer>
+    </dialog>
+  </div>
+</div>
+
+<!-- modal Empresa -->
+
+<div class="modal fade" id="modal-empresa" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <dialog class="modal-content">
+      <header class="modal-header">
+        <h5 class="modal-title" id="modal-contato-titulo">Login Empresa</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </header>
+      <article>
+        <div class="container">
+          <div class="row">
+            <div class="col-1">
+            </div>
+            <div class="col-10">
+              <form>
+                <div class="form-group">
+                  <label for="exampleInputEmail1">E-mail:</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
+                  <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
+                </div>
+                <div class="form-group">
+                  <label for="exampleInputPassword1">Senha:</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
+                  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
+                  id="olho" class="olho" onclick="showPass()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPass()">Mostrar senha</small>
+                </div>
+                <div class="form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
+                </div>
+                <button type="submit" class="btn btn-cor-especial" onclick="">Entrar</button>
+                <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="https://www.google.com.br/">Esqueceu sua senha?</a>
+              </form>
+      </article>
+      <footer class="modal-footer">
+        <div class="row">
+          <div class="col-8">
+            <p class="font-weight-light">Bora ser diferente? &#128527;</p>
+          </div>
+          <div class="col-4">
+            <a href="./cadastro-empresa.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
+          </div>
       </footer>
     </dialog>
   </div>
