@@ -29,10 +29,10 @@
             <a class="nav-link" href="./index.html#quem-somos">Quem somos</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#modal-candidato" href="#">Candidato</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modal-candidato" href="#" onclick="click_modallogin()">Candidato</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="modal" data-target="#modal-empresa" href="#">Empresa</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modal-empresa" href="#" onclick="click_modallogin()">Empresa</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="modal" data-target="#modal-contato" href="#">Contato</a>
@@ -195,141 +195,169 @@
     </footer>
   </main>
 
-<!-- modal contato -->
+  <!-- modal contato -->
 
-<div class="modal fade" id="modal-contato" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <dialog class="modal-content">
-      <header class="modal-header">
-        <h5 class="modal-title" id="modal-contato-titulo">Entre em contato</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </header>
-      <article class="modal-body">
-        <form>
-          <div class="form-group">
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Seu nome">
-          </div>
-          <label class="sr-only" for="inlineFormInputGroup">e-mail</label>
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">@</div>
+  <div class="modal fade" id="modal-contato" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <dialog class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="modal-contato-titulo">Entre em contato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+        <article class="modal-body">
+          <form>
+            <div class="form-group">
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Seu nome">
             </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Seu e-mail">
-          </div>
-          <div class="form-group">
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva sua mensagem"></textarea>
-          </div>
-        </form>
-      </article>
-      <footer class="modal-footer">
-        <button type="button" class="btn btn-cor-especial" onclick="sendEmail()">Enviar</button>
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-      </footer>
-    </dialog>
+            <label class="sr-only" for="inlineFormInputGroup">e-mail</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Seu e-mail">
+            </div>
+            <div class="form-group">
+              <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Escreva sua mensagem"></textarea>
+            </div>
+          </form>
+        </article>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-cor-especial" onclick="sendEmail()">Enviar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </footer>
+      </dialog>
+    </div>
   </div>
-</div>
 
-<!-- modal candidato -->
+  <!-- modal candidato -->
 
-<div class="modal fade" id="modal-candidato" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <dialog class="modal-content">
-      <header class="modal-header">
-        <h5 class="modal-title" id="modal-contato-titulo">Login Candidato</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </header>
-      <article>
-        <div class="container">
+  <div class="modal fade" id="modal-candidato" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <dialog class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="modal-candidato">Login Candidato</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+        <article>
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+              </div>
+              <div class="col-10">
+                <form>
+                  <div class="form-group">
+                    <label for="InputEmailCandidato">E-mail:</label>
+                    <input type="email" class="form-control" id="InputEmailCandidato" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="PasswordCandidato">Senha:</label>
+                    <input type="password" class="form-control" id="PasswordCandidato" placeholder="Password" required>
+                    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
+                    id="olho" class="olho" onclick="showPassCand()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPassCand()">Mostrar senha</small>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkinputcandidato">
+                    <label class="form-check-label" for="checkinputcandidato">Lembre-me</label>
+                  </div>
+                  <button type="submit" class="btn btn-cor-especial" id="entrarcand" onclick="doLoginCandidato()">Entrar</button>
+                  <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="" onclick="$('#modal-candidato').modal('hide')" >Esqueceu sua senha?</a>
+                </form>
+        </article>
+        <footer class="modal-footer">
           <div class="row">
-            <div class="col-1">
+            <div class="col-7">
+              <p class="font-weight-light">Não faz parte? &#128552;</p>
             </div>
-            <div class="col-10">
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">E-mail:</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                  <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha:</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
-                  id="olho" class="olho" onclick="showPass()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPass()">Mostrar senha</small>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
-                </div>
-                <button type="submit" class="btn btn-cor-especial" onclick="doLogin()">Entrar</button>
-                <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="https://www.google.com.br/">Esqueceu sua senha?</a>
-              </form>
-      </article>
-      <footer class="modal-footer">
-        <div class="row">
-          <div class="col-7">
-            <p class="font-weight-light">Não faz parte? &#128552;</p>
-          </div>
-          <div class="col-5">
-            <a href="./cadastro-candidato.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
-          </div>
-      </footer>
-    </dialog>
+            <div class="col-5">
+              <a href="./cadastro-candidato.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
+            </div>
+        </footer>
+      </dialog>
+    </div>
   </div>
-</div>
 
-<!-- modal Empresa -->
+  <!-- modal Empresa -->
 
-<div class="modal fade" id="modal-empresa" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <dialog class="modal-content">
-      <header class="modal-header">
-        <h5 class="modal-title" id="modal-contato-titulo">Login Empresa</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </header>
-      <article>
-        <div class="container">
+  <div class="modal fade" id="modal-empresa" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <dialog class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="modal-empresa">Login Empresa</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+        <article>
+          <div class="container">
+            <div class="row">
+              <div class="col-1">
+              </div>
+              <div class="col-10">
+                <form>
+                  <div class="form-group">
+                    <label for="InputEmailEmpresa">E-mail:</label>
+                    <input type="email" class="form-control" id="InputEmailEmpresa" aria-describedby="emailHelp" placeholder="Enter email" required>
+                    <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
+                  </div>
+                  <div class="form-group">
+                    <label for="PasswordEmpresa">Senha:</label>
+                    <input type="password" class="form-control" id="PasswordEmpresa" placeholder="Password" required>
+                    <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
+                    id="olho" class="olho" onclick="showPassEmp()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPassEmp()">Mostrar senha</small>
+                  </div>
+                  <div class="form-check">
+                    <input type="checkbox" class="form-check-input" id="checkinputempresa">
+                    <label class="form-check-label" for="checkinputempresa">Lembre-me</label>
+                  </div>
+                  <button type="submit" class="btn btn-cor-especial" onclick="doLoginEmpresa()">Entrar</button>
+                  <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="" onclick="$('#modal-empresa').modal('hide')">Esqueceu sua senha?</a>
+                </form>
+        </article>
+        <footer class="modal-footer">
           <div class="row">
-            <div class="col-1">
+            <div class="col-8">
+              <p class="font-weight-light">Bora ser diferente? &#128527;</p>
             </div>
-            <div class="col-10">
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">E-mail:</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" required>
-                  <small id="emailHelp" class="form-text text-muted">Não iremos compartilhar o seu e-mail.</small>
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Senha:</label>
-                  <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" required>
-                  <img src="https://cdn0.iconfinder.com/data/icons/ui-icons-pack/100/ui-icon-pack-14-512.png" 
-                  id="olho" class="olho" onclick="showPass()"><small id="mostrarsenha" class="mostrarsenha" onclick="showPass()">Mostrar senha</small>
-                </div>
-                <div class="form-check">
-                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                  <label class="form-check-label" for="exampleCheck1">Lembre-me</label>
-                </div>
-                <button type="submit" class="btn btn-cor-especial" onclick="">Entrar</button>
-                <a class="esqueci" data-toggle="modal" data-target="#modal-esquecisenha" href="https://www.google.com.br/">Esqueceu sua senha?</a>
-              </form>
-      </article>
-      <footer class="modal-footer">
-        <div class="row">
-          <div class="col-8">
-            <p class="font-weight-light">Bora ser diferente? &#128527;</p>
-          </div>
-          <div class="col-4">
-            <a href="./cadastro-empresa.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
-          </div>
-      </footer>
-    </dialog>
+            <div class="col-4">
+              <a href="./cadastro-empresa.html" class="btn btn-cor-especial btn-materia">Cadastro</a>
+            </div>
+        </footer>
+      </dialog>
+    </div>
   </div>
-</div>
+
+  <div class="modal fade" id="modal-esquecisenha" tabindex="-1" role="dialog" aria-labelledby="modal-contato-titulo" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <dialog class="modal-content">
+        <header class="modal-header">
+          <h5 class="modal-title" id="modal-contato-titulo">Esqueceu sua senha?</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </header>
+        <article class="modal-body">
+          <form>
+            <label class="sr-only" for="inlineFormInputGroup">e-mail</label>
+            <div class="input-group mb-2">
+              <div class="input-group-prepend">
+                <div class="input-group-text">@</div>
+              </div>
+              <input type="text" class="form-control" id="emailinput" placeholder="Seu e-mail">
+            </div>
+          </form>
+        </article>
+        <footer class="modal-footer modal-botoes">
+          <button type="button" class="btn btn-cor-especial" onclick="sendEmailSenha()">Enviar</button>
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        </footer>
+      </dialog>
+    </div>
+  </div>
 
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js" integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut" crossorigin="anonymous"></script>

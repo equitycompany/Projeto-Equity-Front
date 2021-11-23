@@ -150,6 +150,10 @@ footer {
   width: 50%;
 }
 
+.form-check {
+  margin-bottom: 2%;
+}
+
 @media screen and (min-width: 480px) {
   .btn-materia:hover {
     transform: scale(1.2);

@@ -44,22 +44,40 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="ColocarEmail">Email</label>
-                    <input type="email" class="form-control" id="ColocarEmail" placeholder="Inserir seu e-mail">
+                    <input type="email" class="form-control" id="ColocarEmail" placeholder="Inserir seu e-mail" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="ColocarSenha">Senha</label>
-                    <input type="password" class="form-control" id="ColocarSenha" placeholder="Inserir uma senha">
+                    <input type="password" class="form-control" id="ColocarSenha" placeholder="Inserir uma senha" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="ColocarNomeCompleto">Nome Completo</label>
-                  <input type="text" class="form-control" id="ColocarNomeCompleto" placeholder="Inserir seu nome completo">
+                  <input type="text" class="form-control" id="ColocarNomeCompleto" placeholder="Inserir seu nome completo" required>
                 </div>
                 <div class="form-group">
                   <label for="ColocarCPF">CPF</label>
-                  <input type="text" class="form-control" id="ColocarCPF" placeholder="Inserir seu CPF">
+                  <input type="text" class="form-control" id="ColocarCPF" placeholder="Inserir seu CPF" required  maxlength="11" >
                 </div>
-                <button type="submit" class="btn btn-cor-especial">Finalizar Cadastro</button>
+                <button type="submit" class="btn btn-cor-especial" id="finalizar-candidato" onclick="cadastrarCandidato()" disabled="disabled">Finalizar Cadastro</button>
+                <script>
+                  var inputs = document.querySelectorAll("#ColocarSenha, #ColocarEmail, #ColocarNomeCompleto, #ColocarCPF")
+                  var button = document.querySelector("#finalizar-candidato");
+
+                  inputs.forEach(function(input) {
+
+                  input.addEventListener("keyup", function() {
+
+                  if(checkInputs(inputs)) {
+                    button.disabled = false;
+                  } else {
+                    button.disabled = true;
+                  }
+
+                  });
+
+                  });  
+                </script>
               </form>
             </div>
             <div class="col-2">
@@ -136,7 +154,7 @@
         </form>
       </article>
       <footer class="modal-footer">
-        <button type="button" class="btn btn-cor-especial">Enviar</button>
+        <button type="button" class="btn btn-cor-especial" onclick="sendEmail()">Enviar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </footer>
     </dialog>

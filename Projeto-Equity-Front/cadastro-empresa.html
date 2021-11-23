@@ -31,7 +31,7 @@
   </header>
 
   <main>
-    <section id="cadastro-candidato">
+    <section id="cadastro-empresa">
       <div id="" class="caixa">
         <div class="container">
           <div class="row">
@@ -44,22 +44,40 @@
                 <div class="form-row">
                   <div class="form-group col-md-6">
                     <label for="ColocarEmail">Email</label>
-                    <input type="email" class="form-control" id="ColocarEmail" placeholder="Inserir um e-mail">
+                    <input type="email" class="form-control" id="ColocarEmail" placeholder="Inserir um e-mail" required>
                   </div>
                   <div class="form-group col-md-6">
                     <label for="ColocarSenha">Senha</label>
-                    <input type="password" class="form-control" id="ColocarSenha" placeholder="Inserir uma senha">
+                    <input type="password" class="form-control" id="ColocarSenha" placeholder="Inserir uma senha" required>
                   </div>
                 </div>
                 <div class="form-group">
                   <label for="ColocarNomeEmpresa">Nome Empresa</label>
-                  <input type="text" class="form-control" id="ColocarNomeEmpresa" placeholder="Inserir o nome da empresa">
+                  <input type="text" class="form-control" id="ColocarNomeEmpresa" placeholder="Inserir o nome da empresa" required>
                 </div>
                 <div class="form-group">
                   <label for="ColocarCNPJ">CNPJ</label>
-                  <input type="text" class="form-control" id="ColocarCPF" placeholder="Inserir o CNPJ">
+                  <input type="text" class="form-control" id="ColocarCNPJ" placeholder="Inserir o CNPJ" maxlength="14" required>
                 </div>
-                <button type="submit" class="btn btn-cor-especial">Finalizar Cadastro</button>
+                <button type="submit" class="btn btn-cor-especial" id="finalizar-empresa" onclick="cadastrarEmpresa()" disabled="disabled">Finalizar Cadastro</button>
+                <script>
+                  var inputs = document.querySelectorAll("#ColocarSenha, #ColocarEmail, #ColocarNomeEmpresa, #ColocarCNPJ")
+                  var button = document.querySelector("#finalizar-empresa");
+
+                  inputs.forEach(function(input) {
+
+                  input.addEventListener("keyup", function() {
+
+                  if(checkInputs(inputs)) {
+                    button.disabled = false;
+                  } else {
+                    button.disabled = true;
+                  }
+
+                  });
+
+                  });  
+                </script>
               </form>
             </div>
             <div class="col-2">
@@ -136,7 +154,7 @@
         </form>
       </article>
       <footer class="modal-footer">
-        <button type="button" class="btn btn-cor-especial">Enviar</button>
+        <button type="button" class="btn btn-cor-especial" onclick="sendEmail()">Enviar</button>
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
       </footer>
     </dialog>
