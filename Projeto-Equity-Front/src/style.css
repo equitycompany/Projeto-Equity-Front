@@ -102,6 +102,12 @@ footer {
   margin: 100px auto;
 }
 
+.footercontato {
+  position:absolute; 
+  text-align: center;
+  line-height: 100px;
+}
+
 .olho {
   cursor: pointer;
   width: 20px;
