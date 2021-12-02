@@ -67,6 +67,13 @@ html {
   object-position: 0 60%; 
 }
 
+.thumb-outro {
+  width:250px; 
+  height:150px; 
+  object-fit:cover; 
+  object-position: 0 60%; 
+}
+
 .icones {
   font-size: 2rem;
 }
@@ -91,6 +98,10 @@ html {
 
 #cor-titulo {
   color: orangered ;
+}
+
+.titulo-curriculo {
+  color: orangered
 }
 
 .btn-primary {
