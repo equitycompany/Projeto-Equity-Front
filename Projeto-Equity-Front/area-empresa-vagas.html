@@ -25,14 +25,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link text-primary" href="#">Início<span class="sr-only">(current)</span></a>
+            <a class="nav-link text-primary" href="http://127.0.0.1:5500/area-empresa.html?#">Início<span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               Menu
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="#">Cadastrar Vagas</a>
+              <a class="dropdown-item" href="http://127.0.0.1:5500/area-empresa-vagas.html#">Cadastrar Vagas</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Nosso Blog</a>
             </div>
@@ -58,23 +58,25 @@
       <div class="row justify-content-around"></div>
         <form>           
           <div class="form-group">
-            <h2 class="titulo-curriculo">Nome da vaga - "cargo"</h2>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Nome da vaga para o candidato despertar o interesse">
+            <h2 class="titulo-curriculo formulario">Nome da vaga - "cargo"</h2>
+            <input type="text" class="form-control formulario" id="nomevaga" placeholder="Nome da vaga para o candidato despertar o interesse" required>
           </div>
           <div class="form-group">
-            <h2 class="titulo-curriculo">Sobre nós</h2>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Conte para o candidato um pouco sobre trabalhar na sua empresa">
+            <h2 class="titulo-curriculo formulario">Sobre nós</h2>
+            <input type="text" class="form-control formulario" id="sobre" placeholder="Conte para o candidato um pouco sobre trabalhar na sua empresa" required>
           </div>
           <div class="form-group">
-            <h2 class="titulo-curriculo">Habilidades desejáveis</h2>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Habilidades">
+            <h2 class="titulo-curriculo formulario">Habilidades desejáveis</h2>
+            <input type="text" class="form-control formulario" id="habilidades" placeholder="Habilidades" required>
           </div>
           <div class="form-group">
-            <h2 class="titulo-curriculo">Descrição da vaga&#x1F929;</h2>
+            <h2 class="titulo-curriculo formulario">Descrição da vaga&#x1F929;</h2>
             <label for="exampleFormControlTextarea1"> </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control formulario" id="descricao" rows="3"></textarea required>
           </div>
-          
+          <div class="form-group formulario ">
+            <button type="submit" class="btn btn-cor-especial botao_form" id="finalizar-candidato" onclick="cadastrarVaga()">Cadastrar Vaga</button>
+          </div>
         </form>
             </article>
           </div>

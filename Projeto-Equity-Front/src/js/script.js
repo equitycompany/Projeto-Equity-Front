@@ -103,8 +103,10 @@ function doCandidatoAuth(login, senha) {
 
     if (validuser == "true") {
         console.log("Login realizado com sucesso")
+        alert("Login realizado com sucesso")
     } else {
         console.log("Login inválido")
+        alert("Login inválido")
     }
 }
 
@@ -120,11 +122,13 @@ function doEmpresaAuth(login, senha) {
 
     if (validuser == "true") {
         console.log("Login realizado com sucesso")
+        alert("Login realizado com sucesso")
         //window.location.href = 'http://127.0.0.1:5500/index.html#'
         window.open('http://127.0.0.1:5500/index.html#', "_self", false)
         window.location.replace("http://127.0.0.1:5500/index.html#")
     } else {
         console.log("Login inválido")
+        alert("Login inválido")
     }
 }
 
@@ -165,8 +169,10 @@ function sendEmail() {
 
     if (validuser == "true") {
         console.log("E-mail enviado")
+        alert("E-mail enviado")
     } else {
         console.log("E-mail não foi enviado")
+        alert("E-mail não foi enviado")
     }
 }
 
@@ -213,6 +219,19 @@ function changepass() {
     }
 }
 
+function GetCandByEmail() {
+    var candidato
+    var urlrequest
+    const email = window.localStorage.getItem("InputEmailCandidato")
+
+    urlrequest = "https://localhost:44397/api/Candidato/GetCandidatoByEmail/"
+    urlrequest += email
+
+    candidato = doGetRequest(urlrequest)
+
+    return candidato
+}
+
 function cadastrarCandidato() {
     var validuser
     var urlrequest
@@ -233,8 +252,10 @@ function cadastrarCandidato() {
 
         if (validuser == "Candidato cadastrado com sucesso!") {
             console.log("Cadastro realizado")
+            alert("Cadastro realizado")
         } else {
             console.log("Cadastro não foi realizado")
+            alert("Cadastro não foi realizado")
         }
     } else {
         alert("digite o e-mail corretamente")
@@ -242,7 +263,7 @@ function cadastrarCandidato() {
 }
 
 function cadastrarEmpresa() {
-    var validuser
+    var validemp
     var urlrequest
     var dados
 
@@ -257,17 +278,95 @@ function cadastrarEmpresa() {
         })
 
 
-        validuser = doPostRequest(urlrequest, dados)
+        validemp = doPostRequest(urlrequest, dados)
         console.log(validuser)
 
-        if (validuser == "Empresa cadastrado com sucesso!") {
+        if (validemp == "Empresa cadastrado com sucesso!") {
             console.log("Cadastro realizado")
+            alert("Cadastro realizado")
         } else {
             console.log("Cadastro não foi realizado")
+            alert("Cadastro não foi realizado")
         }
     } else {
         alert("digite o e-mail corretamente")
         }
+}
+
+function cadastrarVaga() {
+    var validvaga
+    var urlrequest
+    var dados
+
+    urlrequest = "https://localhost:44397/api/Vaga/CadastrarVaga/"
+
+    dados = JSON.stringify({
+        "nome": document.getElementById("nomevaga").value,
+        "sobre": document.getElementById("sobre").value,
+        "habilidades": document.getElementById("habilidades").value,
+        "descricao": document.getElementById("descricao").value
+    })
+
+    validvaga = doGetRequest(urlrequest)
+    console.log(validvaga)
+
+    if (validvaga == "Vaga cadastrada com sucesso!") {
+        console.log("Cadastro realizado")
+        alert("Cadastro realizado")
+    } else {
+        console.log("Cadastro não foi realizado")
+        alert("Cadastro não foi realizado")
+    }
+}
+
+function cadastrarCurriculo() {
+    var validcur
+    var urlrequest
+    var dados
+    var candidato
+
+    urlrequest = "https://localhost:44397/api/Candidato/CadastrarCurriculo/"
+
+    candidato = GetCandByEmail()
+
+    candidato = JSON.parse(candidato)
+    console.log(candidato.nome)
+    console.log(candidato.email)
+
+    dados = JSON.stringify({
+        "cpf": candidato.cpf,
+        "nome": candidato.nome,
+        "grauescolar": document.getElementById("grau").value,
+        "experiencia": document.getElementById("experiencia").value,
+        "cursos": document.getElementById("cursos").value,
+        "sobre": document.getElementById("sobre").value
+    })
+
+    validcur = doPostRequest(urlrequest, dados)
+    console.log(validcur)
+
+    if (validcur == "Curriculo cadastrado com sucesso!") {
+        console.log("Cadastro realizado")
+        alert("Cadastro realizado")
+    } else {
+        console.log("Cadastro não foi realizado")
+        alert("Cadastro não foi realizado")
+    }
+}
+function carregarVagas() {
+    var validcur
+    var urlrequest
+    var dados
+    var vagas
+
+    urlrequest = "https://localhost:44397/api/Vaga/ListarVagas/"
+
+    vagas = doGetRequest(urlrequest)
+
+    vagas = JSON.parse(vagas)
+    console.log(vagas)
+
+    return vagas
 }
 
 function checkInputs(inputs) {
@@ -282,4 +381,16 @@ function checkInputs(inputs) {
     });
 
     return filled;
+}
+
+async function obterNomeVaga(tipo) {
+    var vagas
+    
+    vagas = carregarVagas()
+
+    resultado.json() 
+    .then(produtos => {
+       document.getElementById('idprodutos').replaceChildren();
+       listarProdutos(produtos)
+     });     
 }
